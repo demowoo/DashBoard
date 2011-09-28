@@ -1,15 +1,15 @@
 CREATE TABLE user(
 	id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	name VARCHAR(50),
-	pass VARCHAR(50),
-	avatar BLOB,
+	password VARCHAR(50),
+	avata BLOB,
 	regDate date
 );
 
 CREATE TABLE comment(
 	id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	content VARCHAR(4000),
-	comTime DATETIME,
+	postTime DATETIME,
 	userId BIGINT NOT NULL,
 	followId BIGINT,
 	FOREIGN KEY (userId) REFERENCES user(id) ON DELETE CASCADE
